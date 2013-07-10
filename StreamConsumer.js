@@ -124,6 +124,10 @@ __.prototype.subscribe = function(streamHash) {
  */
 __.prototype.unsubscribe = function(hash) {
 
+    if(!this.streams.hasOwnProperty(hash)) {
+        return Q.reject('unknown hash: ' + hash);
+    }
+
     var body = JSON.stringify({'action' : 'unsubscribe', 'hash' : hash});
 
     if (this.client.started()) {
