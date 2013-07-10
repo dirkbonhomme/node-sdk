@@ -110,7 +110,7 @@ __.prototype.subscribe = function(streamHash) {
         function() {
 
             if(!self._validateHash(streamHash)) {
-                return Q.reject('invalid hash: ', streamHash);
+                return Q.reject('invalid hash: ' + streamHash);
             }
             return self._subscribeToStream(streamHash);
         }
