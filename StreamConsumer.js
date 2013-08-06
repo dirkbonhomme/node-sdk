@@ -110,7 +110,7 @@ __.prototype.subscribe = function(streamHash) {
         function() {
 
             if(!self._validateHash(streamHash)) {
-                return Q.reject('invalid hash: ', streamHash);
+                return Q.reject('invalid hash: ' + streamHash);
             }
             return self._subscribeToStream(streamHash);
         }
@@ -123,6 +123,10 @@ __.prototype.subscribe = function(streamHash) {
  * @return {promise}
  */
 __.prototype.unsubscribe = function(hash) {
+
+    if(!this.streams.hasOwnProperty(hash)) {
+        return Q.reject('unknown hash: ' + hash);
+    }
 
     var body = JSON.stringify({'action' : 'unsubscribe', 'hash' : hash});
 

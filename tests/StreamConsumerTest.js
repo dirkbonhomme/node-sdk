@@ -713,6 +713,19 @@ exports['unsubscribe'] = {
         ).done();
     },
 
+    'will reject on unknown hash' : function(test) {
+
+        var ds = StreamConsumer.create();
+
+        ds.unsubscribe('abc123').fail(
+            function(err){
+                test.ok(!ds.streams.hasOwnProperty('abc123'));
+                test.equal(err, 'unknown hash: abc123');
+                test.done();
+            }
+        );
+    },
+
     'success' : function(test) {
 
         var client = {
@@ -733,9 +746,9 @@ exports['unsubscribe'] = {
         ds.streams['abc123'] = {hash: 'abc123', state : 'subscribed'};
         ds.unsubscribe('abc123').then(
             function(unsub) {
+                test.ok(!ds.streams.hasOwnProperty('abc123'));
                 test.equal(unsub.hash, 'abc123');
                 test.equal(unsub.state, 'unsubscribed');
-                //test.equal(Object.keys(ds.streams).length, 0);
                 test.done();
             }, function(err) {
                 test.ok(false);
