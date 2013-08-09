@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "nock": "",
-    "monkey-patcher": ""
+    "monkey-patcher": "",
+    "nodeunit": ""
   },
   "readmeFilename": "README.md",
   "gitHead": "6396215b4bf893c554f54a6a56117f7cb54faf37",
@@ -22,7 +23,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "test": "make test"
   },
   "repository": {
     "type": "git",

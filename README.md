@@ -10,6 +10,18 @@ Note: this module uses promises (via the Q library) and events, not callbacks.
 ## Install
 - Using npm `npm install datasift-sdk`
 
+##Test
+
+Navigate to this module's repository and make sure you have the development modules installed:
+
+- npm install
+
+
+Run the tests:
+
+- npm test 
+
+
 ## General usage
 
 To create an instance of the client:
