@@ -48,7 +48,7 @@ var __ = function (username, apiKey) {
     this.username = username;
     this.apiKey = apiKey;
     this.headers = {
-        'User-Agent'        : 'DataSiftNodeSDK/0.3.0',
+        'User-Agent'        : 'DataSiftNodeSDK/0.3.2',
         'Connection'        : 'Keep-Alive',
         'Transfer-Encoding' : 'chunked',
         'Content-Type'      : 'application/x-www-form-urlencoded; charset=UTF-8',

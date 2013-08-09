@@ -1,6 +1,6 @@
 {
   "name": "datasift-sdk",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "DataSift streaming API consumer",
   "main": "datasift.js",
   "keywords": [
@@ -23,7 +23,7 @@
     "test": "tests"
   },
   "scripts": {
-     "test": "make test"
+    "test": "make test"
   },
   "repository": {
     "type": "git",

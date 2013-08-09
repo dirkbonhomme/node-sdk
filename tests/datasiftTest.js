@@ -60,7 +60,7 @@ exports["constructor"] = {
         var dsc = new DataSiftClient('ds-username', 'ds-api-key');
 
         test.deepEqual(dsc.headers, {
-            'User-Agent'    : 'DataSiftNodeSDK/0.3.0',
+            'User-Agent'    : 'DataSiftNodeSDK/0.3.2',
             'Connection'    : 'Keep-Alive',
             'Transfer-Encoding' : 'chunked',
             'Content-Type'  : 'application/x-www-form-urlencoded; charset=UTF-8',
