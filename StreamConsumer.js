@@ -30,7 +30,7 @@
 var HttpStream = require('tenacious-http');
 var EventEmitter = require('events').EventEmitter;
 var Q = require('q');
-var https = require('https');
+var http = require('http');
 
 var __ = function() {
     EventEmitter.call(this);
@@ -222,9 +222,9 @@ __.prototype._connect = function (headers) {
         path: path
     };
 
-    var req = https.request(options);
+    var req = http.request(options);
 
-    req.write('\n');
+    req.write('\n', 'utf8');
 
     return req;
 };

@@ -32,7 +32,7 @@ var StreamConsumer = require('../StreamConsumer');
 var HttpStream = require('tenacious-http');
 var MonkeyPatcher = require('monkey-patcher').MonkeyPatcher;
 var EventEmitter = require('events').EventEmitter;
-var https = require('https');
+var http = require('http');
 
 exports['create'] = {
 
@@ -102,7 +102,7 @@ exports['connect'] = {
          test.equal(data, '\n');
         };
 
-        MonkeyPatcher.patch(https, 'request', function (options) {
+        MonkeyPatcher.patch(http, 'request', function (options) {
 
             test.deepEqual(options, {
              host: 'stream.datasift.com',
@@ -138,7 +138,7 @@ exports['connect'] = {
             test.equal(data, '\n');
         };
 
-        MonkeyPatcher.patch(https, 'request', function (options) {
+        MonkeyPatcher.patch(http, 'request', function (options) {
 
             test.deepEqual(options, {
                 host: 'stream.datasift.com',
