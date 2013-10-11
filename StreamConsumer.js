@@ -328,9 +328,11 @@ __.prototype._handleEvent = function (eventData) {
         this.emit(eventData.status, eventData.message, eventData);
     }
     else if (eventData.data !== undefined && eventData.data.deleted === true){
+        this._restartInteractionTimeout();
         this.emit('delete', eventData);
     }
     else if (eventData.tick !== undefined) {
+        this._restartInteractionTimeout();
         this.emit('tick', eventData);
     }
     else if (eventData.data !== undefined && eventData.data.interaction !== undefined) {
