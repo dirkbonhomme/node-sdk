@@ -412,6 +412,7 @@ __.prototype._restartInteractionTimeout = function() {
     clearTimeout(this.interactionTimeout);
     this.interactionTimeout = setTimeout(function(){
         self._recycle();
+        self.emit('recycle');
     }, __.INTERACTION_TIMEOUT);
 };
 
